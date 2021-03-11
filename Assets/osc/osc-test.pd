@@ -1,0 +1,20 @@
+#N canvas 610 112 450 300 10;
+#X obj 0 0 import mrpeach;
+#X obj 170 220 udpsend;
+#X obj 170 190 packOSC;
+#X msg 30 160 connect localhost 9001;
+#X msg 30 190 disconnect;
+#X msg 170 130 send /test \$1;
+#X floatatom 170 100 5 0 0 0 - - -, f 5;
+#X obj 170 70 counter;
+#X obj 170 50 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 30 120 loadbang;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 2 0;
+#X connect 6 0 5 0;
+#X connect 7 0 6 0;
+#X connect 8 0 7 0;
+#X connect 9 0 3 0;
